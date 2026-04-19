@@ -3,10 +3,9 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const navLinks = [
+  { name: "Work", href: "#work" },
   { name: "About", href: "#about" },
   { name: "Services", href: "#services" },
-  { name: "Projects", href: "#projects" },
-  { name: "Business", href: "#business" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -14,74 +13,52 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-sm border-b border-black">
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <motion.a
-          href="#"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="font-display text-2xl font-bold tracking-tighter"
-        >
-          ELFEKKY<span className="text-gradient-primary">.</span>
-        </motion.a>
+    <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-fit max-w-[90%] md:max-w-[50%] z-50">
+      <div className="bg-white/80 backdrop-blur-xl border border-black/5 rounded-full px-8 py-3 flex items-center gap-12 shadow-2xl shadow-black/5">
+        <a href="#" className="h-10 flex-shrink-0">
+          <img src="/assets/logo&text.png" alt="Elfekky" className="h-full object-contain" />
+        </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link, i) => (
-            <motion.a
+        <div className="hidden md:flex items-center gap-10">
+          {navLinks.map((link) => (
+            <a
               key={link.name}
               href={link.href}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              className="text-sm font-medium hover:text-medium-grey transition-colors"
+              className="text-sm font-display tracking-tight text-medium-grey hover:text-black transition-colors"
             >
               {link.name}
-            </motion.a>
+            </a>
           ))}
-          <a
-            href="#contact"
-            className="px-4 py-2 bg-black text-white text-sm font-medium hover:bg-soft-black transition-colors"
-          >
-            Hire Me
-          </a>
         </div>
 
         {/* Mobile Nav Toggle */}
         <button
           className="md:hidden p-2"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle Menu"
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
         <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          className="md:hidden bg-white border-b border-black overflow-hidden"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="absolute top-full left-0 w-full mt-4 bg-white border border-black/5 rounded-3xl p-8 shadow-2xl md:hidden"
         >
-          <div className="flex flex-col p-6 gap-4">
+          <div className="flex flex-col gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-lg font-medium"
+                className="text-lg font-display tracking-tight"
               >
                 {link.name}
               </a>
             ))}
-            <a
-              href="#contact"
-              onClick={() => setIsOpen(false)}
-              className="w-full py-3 bg-black text-white text-center font-medium"
-            >
-              Hire Me
-            </a>
           </div>
         </motion.div>
       )}

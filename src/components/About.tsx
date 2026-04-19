@@ -2,37 +2,56 @@ import { motion } from "motion/react";
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-white">
+    <section id="about" className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-4">
-            <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-medium-grey mb-4">
-              01 // About
-            </h2>
-            <h3 className="text-4xl font-bold tracking-tighter">
-              The Architect of <span className="text-gradient-primary">Intelligent Ecosystems</span>.
-            </h3>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
+          <div className="lg:col-span-5 order-2 lg:order-1">
+            <div className="relative aspect-square w-full max-w-md mx-auto">
+              {/* Squircle Mask Container */}
+              <div 
+                className="w-full h-full bg-black overflow-hidden relative"
+                style={{ clipPath: "url(#squircleMask)" }}
+              >
+                <img 
+                  src="/assets/ElfekkyImage.png" 
+                  alt="Elfekky" 
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                />
+              </div>
+              
+              <svg width="0" height="0" className="absolute">
+                <defs>
+                  <clipPath id="squircleMask" clipPathUnits="objectBoundingBox">
+                    <path d="M .5,0 C .1,0 0,.1 0,.5 0,.9 .1,1 .5,1 .9,1 1,.9 1,.5 1,.1 .9,0 .5,0 Z" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
           </div>
           
-          <div className="lg:col-span-8 flex flex-col gap-8">
-            <p className="text-2xl font-medium leading-tight">
-              Abdelrahman Elfekky, known as Elfekky, is an Artificial Intelligence Engineer and Data Analyst with a strong focus on building real-world digital solutions.
-            </p>
+          <div className="lg:col-span-7 order-1 lg:order-2">
+            <h2 className="text-[10px] font-bold tracking-[0.4em] text-medium-grey mb-6">
+              01 // Profile
+            </h2>
+            <h3 className="text-4xl md:text-6xl font-display tracking-tight leading-[0.9] mb-12">
+              Personal Profile.
+            </h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-medium-grey leading-relaxed">
-              <p>
-                He is a Data Science student at the Faculty of Artificial Intelligence, driven by a passion for AI, data, and content creation. His work revolves around turning ideas into fully functional products, whether it's a website, a mobile app, or a complete digital system.
+            <div className="max-w-xl flex flex-col gap-10">
+              <p className="text-2xl font-display leading-tight">
+                AI Engineer and Data Analyst building digital solutions.
               </p>
-              <p>
-                What sets him apart is his ability to integrate <strong>AI Automation</strong> into products, creating smarter, more efficient systems that go beyond traditional development. He doesn’t just build products, he engineers complete ecosystems.
-              </p>
-            </div>
-            
-            <div className="mt-8 p-8 border border-black relative overflow-hidden group">
-              <div className="absolute top-0 left-0 w-2 h-full bg-gradient-primary"></div>
-              <p className="text-xl font-bold italic">
-                "Elfekky builds more than digital products. He builds systems that think."
-              </p>
+              
+              <div className="flex flex-wrap gap-4">
+                <div className="p-6 border border-black/10 bg-white/50 flex flex-col gap-2 flex-1 min-w-[280px]">
+                  <span className="text-[10px] font-bold text-medium-grey">Education & Focus</span>
+                  <p className="text-lg font-display leading-tight">Data science student turning concepts into products.</p>
+                </div>
+                <div className="p-6 border border-black/10 bg-white/50 flex flex-col gap-2 flex-1 min-w-[280px]">
+                  <span className="text-[10px] font-bold text-medium-grey">Specialization</span>
+                  <p className="text-lg font-display leading-tight">Specialized in AI automation integration.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

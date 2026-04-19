@@ -1,36 +1,11 @@
 .s-cta {
   position: relative;
   z-index: 2;
-  padding: 55rem 0 0;
-  --color-primary: #DDFDFF; /* Replaced with a white/light blue */
+  padding: 10rem 0; /* Reduced from 55rem */
+  background: #FFFFFF;
+  --color-primary: #DDFDFF;
   --color-secondary: #000000;
-  --color-shadow: rgba(0, 0, 0, 0.4);
-}
-
-@media (min-width: 1440px) {
-  .s-cta {
-    padding-top: 48rem;
-  }
-}
-@media (min-width: 1200px) and (max-width: 1439px) {
-  .s-cta {
-    padding-top: 41.25rem;
-  }
-}
-@media (min-width: 1024px) and (max-width: 1199px) {
-  .s-cta {
-    padding-top: 34.375rem;
-  }
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .s-cta {
-    padding-top: 36rem;
-  }
-}
-@media (max-width: 767px) {
-  .s-cta {
-    padding-top: 21.6rem;
-  }
+  --color-shadow: rgba(0, 0, 0, 0.1);
 }
 
 .s-cta .s__inner {
@@ -52,15 +27,15 @@
 .s-cta .s__button {
   position: relative;
   z-index: 1;
-  width: 6rem;
-  height: 6rem;
+  width: 15rem;
+  height: 15rem;
   cursor: pointer;
   color: var(--color-primary);
-  font: 700 3.75rem / 6.85rem "McLaren", system-ui, sans-serif;
-  letter-spacing: 0.05em;
+  font: 400 1.5rem / 15rem "McLaren", system-ui, sans-serif;
+  letter-spacing: normal;
   text-align: center;
   text-indent: 0.075em;
-  text-transform: uppercase;
+  text-transform: none; /* Removed uppercase */
   margin: 0 auto;
 }
 
@@ -79,12 +54,12 @@
 }
 
 .s-cta .s__hover.is-active .s__button .s__button__inner {
-  scale: 1.5;
+  scale: 1.1;
   transition: scale 0.6s cubic-bezier(0.86, 0, 0.07, 1) 0s;
 }
 
 .s-cta .s__hover.is-active .s__button .s__button__text {
-  scale: 2;
+  scale: 1.1;
   transition: scale 0.6s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s;
 }
 
@@ -94,11 +69,11 @@
     animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
   25% {
-    transform: translate3d(0, -52%, 0);
+    transform: translate3d(0, -95%, 0);
     animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   }
   75% {
-    transform: translate3d(0, 52%, 0);
+    transform: translate3d(0, 95%, 0);
     animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
   100% {
@@ -126,7 +101,7 @@
   clip-path: circle(0 at 50% 50%);
   overflow: hidden;
   color: var(--color-primary);
-  font: 700 calc(var(--size) * 0.3743) / 1 "McLaren", system-ui, sans-serif;
+  font: 700 calc(var(--size) * 0.12) / 1 "McLaren", system-ui, sans-serif; /* Reduced from 0.3743 to 0.12 */
   text-align: center;
   text-transform: uppercase;
   transition: clip-path 0.6s cubic-bezier(0.86, 0, 0.07, 1);
