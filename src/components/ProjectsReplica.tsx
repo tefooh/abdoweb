@@ -145,7 +145,7 @@ export default function ProjectsReplica() {
         ScrollTrigger.refresh();
 
         window.addEventListener('resize', this.onResize.bind(this));
-
+        
         // Use IntersectionObserver instead of custom event
         const observer = new IntersectionObserver((entries) => {
           const entry = entries[0];
@@ -313,8 +313,8 @@ export default function ProjectsReplica() {
 
       setWorks() {
         this.works.forEach((work, i) => {
-          // Set statically inside component or here
-          work.el.style.setProperty('--progress', '1');
+           // Set statically inside component or here
+           work.el.style.setProperty('--progress', '1');
         });
       }
 
@@ -331,7 +331,7 @@ export default function ProjectsReplica() {
             scrub: 1,
           },
           onUpdate: () => {
-            this.scene.style.setProperty('--state', String(this.state));
+             this.scene.style.setProperty('--state', String(this.state));
           }
         });
 
@@ -340,11 +340,11 @@ export default function ProjectsReplica() {
         this.tl.fromTo(this.container, { clipPath: 'inset(0 1rem)' }, { clipPath: 'inset(0 0rem)', duration: 0.75, ease: 'power3.in' }, 0);
         this.tl.fromTo(this, { pointsProgress: 0 }, { pointsProgress: 1, duration: 1, ease: 'power4.inOut' }, 0);
         this.tl.fromTo(this, { state: 0 }, { state: 1, duration: 0.75, ease: 'power4.in' }, 0);
-
+        
         // Progress from 1 to -1 for works
         this.tl.fromTo(worksEl, { '--progress': 1 }, { '--progress': -1, ease: 'slow(0.15, 0.6)', stagger: 0.25 }, 0.75);
         this.tl.fromTo(this, { animationProgress: 0 }, { animationProgress: 10000, duration: this.tl.totalDuration(), ease: 'power1.out' }, 0.75);
-
+        
         this.tl.fromTo(this, { state: 1 }, { state: 0, duration: 0.75, ease: 'power4.inOut', immediateRender: false }, '-=1');
         this.tl.fromTo(this.mask.el, { scale: this.mask.maxScale }, { scale: 1, duration: 0.75, ease: 'power4.inOut', immediateRender: false }, '-=1');
         this.tl.fromTo(this.scene, { scale: 1 }, { scale: 0.75, duration: 0.75, ease: 'power3.inOut', immediateRender: false }, '-=1');
@@ -357,8 +357,8 @@ export default function ProjectsReplica() {
         letters.forEach(letter => {
           const letterSpeed = speed * letter.freq;
           letter.ghosts.forEach((ghost: any, index: number) => {
-            let progress = (((animationProgress % letterSpeed) / letterSpeed + index / letter.total) % 1) / 0.7 - 0.15;
-            ghost.el.style.setProperty('--progress', String(progress));
+             let progress = (((animationProgress % letterSpeed) / letterSpeed + index / letter.total) % 1) / 0.7 - 0.15;
+             ghost.el.style.setProperty('--progress', String(progress));
           });
         });
       }
@@ -415,21 +415,21 @@ export default function ProjectsReplica() {
         this.movePoints();
         this.moveLetters();
         this.drawPoints();
-
+        
         // update works inview class manually based on progress attribute
         this.works.forEach(w => {
-          const p = parseFloat(w.el.style.getPropertyValue('--progress') || "1");
-          if (p < 1 && p > -1) {
-            w.el.classList.add('is-inview');
-          } else {
-            w.el.classList.remove('is-inview');
-          }
+           const p = parseFloat(w.el.style.getPropertyValue('--progress') || "1");
+           if (p < 1 && p > -1) {
+             w.el.classList.add('is-inview');
+           } else {
+             w.el.classList.remove('is-inview');
+           }
         });
       }
     }
 
     const section = new Section(sectionRef.current);
-
+    
     return () => {
       section.destroy();
     };
@@ -452,9 +452,9 @@ export default function ProjectsReplica() {
             {works.map((work, index) => {
               const key = work.title.split(' ')[0] + '-' + index;
               return (
-                <div
-                  key={index}
-                  className="a-work s__scene__work js-work"
+                <div 
+                  key={index} 
+                  className="a-work s__scene__work js-work" 
                   style={{ '--size': work.size, '--y': work.y } as any}
                 >
                   <div className="a__inner">
@@ -464,7 +464,7 @@ export default function ProjectsReplica() {
                         <h3 className="text-4xl md:text-7xl font-bold font-display z-10">{work.title}</h3>
                         <p className="mt-4 text-medium-grey z-10 text-center max-w-sm">{work.description}</p>
                         <div className="absolute bottom-6 right-6 w-12 h-12 bg-white text-black flex items-center justify-center rounded-full hover:scale-110 transition-transform">
-                          {work.isGithub ? <Github size={20} /> : <ExternalLink size={20} />}
+                           {work.isGithub ? <Github size={20} /> : <ExternalLink size={20} />}
                         </div>
                       </div>
                       <div className="a__caption">

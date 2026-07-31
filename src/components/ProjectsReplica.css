@@ -3,13 +3,10 @@
   position: relative;
   z-index: 2;
   height: var(--height);
-  background: var(--color-brand-primary-start);
-  /* Using existing gradient or a base color */
+  background: var(--color-brand-primary-start); /* Using existing gradient or a base color */
 
-  --color-primary: #DDFDFF;
-  /* Replaced with a white/light blue */
-  --color-secondary: #000000;
-  /* Replaced with black */
+  --color-primary: #DDFDFF; /* Replaced with a white/light blue */
+  --color-secondary: #000000; /* Replaced with black */
   --color-shadow: rgba(0, 0, 0, 0.4);
 }
 
@@ -170,9 +167,12 @@
   top: 0;
   left: 0;
   display: block;
-  transform: rotateY(calc(var(--head) * -10deg * var(--state))) translate3d(calc(var(--head) * 50vw * var(--state)),
+  transform: rotateY(calc(var(--head) * -10deg * var(--state)))
+    translate3d(
+      calc(var(--head) * 50vw * var(--state)),
       calc(var(--iy) * 50% * var(--ahead) * var(--state)),
-      0);
+      0
+    );
   pointer-events: none;
   will-change: transform;
 }
@@ -184,7 +184,8 @@
   z-index: -1;
   color: var(--color-shadow);
   opacity: min(calc(var(--state) * 2), 1);
-  transform: scale(1.05, 1.02) translate3d(calc(var(--head) * 0.1rem * var(--state) * var(--state)), 0, 0);
+  transform: scale(1.05, 1.02)
+    translate3d(calc(var(--head) * 0.1rem * var(--state) * var(--state)), 0, 0);
   transform-origin: calc(50% - var(--head) * 50%) -50%;
   will-change: opacity, transform;
   content: attr(data-letter);
@@ -195,25 +196,35 @@
   top: 50%;
   left: 50%;
   z-index: 2;
-  transform: rotateY(calc(var(--progress) * -20deg)) translate3d(calc(var(--progress) * (50vw + 100%) - 50%),
+  transform: rotateY(calc(var(--progress) * -20deg))
+    translate3d(
+      calc(var(--progress) * (50vw + 100%) - 50%),
       calc(var(--y) * 50% - 50%),
-      calc(var(--progress) * var(--progress) * -5rem)) scale(var(--size));
+      calc(var(--progress) * var(--progress) * -5rem)
+    )
+    scale(var(--size));
   will-change: transform;
 }
 
 @media (max-width: 1024px) {
   .s__scene__work {
-    transform: rotateY(calc(var(--progress) * -20deg)) translate3d(calc(var(--progress) * (50vw + 100%) - 50%),
+    transform: rotateY(calc(var(--progress) * -20deg))
+      translate3d(
+        calc(var(--progress) * (50vw + 100%) - 50%),
         calc(var(--y) * 50% - 50%),
-        calc(var(--progress) * var(--progress) * -5rem));
+        calc(var(--progress) * var(--progress) * -5rem)
+      );
   }
 }
 
 @media (max-width: 768px) {
   .s__scene__work {
-    transform: rotateY(calc(var(--progress) * -20deg)) translate3d(calc(var(--progress) * (50vw + 100%) - 50%),
+    transform: rotateY(calc(var(--progress) * -20deg))
+      translate3d(
+        calc(var(--progress) * (50vw + 100%) - 50%),
         calc(var(--y) * 100% - 50%),
-        calc(var(--progress) * var(--progress) * -5rem));
+        calc(var(--progress) * var(--progress) * -5rem)
+      );
   }
 }
 
@@ -241,7 +252,7 @@
   margin: 0;
   padding: 0.5rem 0.5rem 0;
   background: var(--color-secondary);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255,255,255,0.4);
   content-visibility: hidden;
   transform-style: preserve-3d;
   will-change: transform;

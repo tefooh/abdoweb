@@ -6,8 +6,8 @@ import './CTAReplica.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const lines = [
-  ['C', 'O', 'N', 'T', 'A', 'C', 'T'],
-  ['E', 'L', 'F', 'E', 'K', 'K', 'Y'],
+  ['L', 'e', 't<span class="sup">\'</span>', 's'],
+  ['R', 'o', 'c', 'k'],
 ];
 
 export default function CTAReplica() {
@@ -398,7 +398,7 @@ export default function CTAReplica() {
           <div className="s__button js-button relative">
             <div className="s__button__inner absolute flex items-center justify-center">
               <div className="s__button__text js-button-text">
-                CONTACT
+                GO
               </div>
             </div>
           </div>

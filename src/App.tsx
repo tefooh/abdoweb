@@ -8,6 +8,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Services from "./components/Services";
 import ProjectsReplica from "./components/ProjectsReplica";
+import Business from "./components/Business";
 import Approach from "./components/Approach";
 import Footer from "./components/Footer";
 import CTAReplica from "./components/CTAReplica";
@@ -21,6 +22,7 @@ export default function App() {
         <About />
         <Services />
         <ProjectsReplica />
+        <Business />
         <Approach />
         <CTAReplica />
       </main>

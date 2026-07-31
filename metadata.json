@@ -2,5 +2,7 @@
   "name": "Elfekky Portfolio",
   "description": "Portfolio of Abdelrahman Elfekky, Artificial Intelligence Engineer and Data Analyst.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
