@@ -4,11 +4,14 @@
 
 An interactive minimalist portfolio and digital showcase built for a client. Built with React, TypeScript, Vite, Tailwind CSS, GSAP, and Framer Motion.
 
-Created strictly by Mtarif and www.mtarif.com
+Created by Mtarif and www.mtarif.com to a client.
 
 ## Overview
 
 This portfolio showcases high precision digital products, AI automation systems, and engineering achievements. The architecture and visual presentation rely on simplicity, modern line art minimalism, and mathematical design balance.
+<img width="1351" height="810" alt="image" src="https://github.com/user-attachments/assets/1aa93941-4c47-433f-886a-f14daaa99ad0" />
+<img width="1355" height="813" alt="image" src="https://github.com/user-attachments/assets/58a87750-efa9-4315-8c0f-a5f5915f13ea" />
+<img width="1360" height="806" alt="image" src="https://github.com/user-attachments/assets/55ea6068-bde9-43b0-a52f-5e09b6b49e81" />
 
 ## Features
 
